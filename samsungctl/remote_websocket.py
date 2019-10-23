@@ -7,7 +7,7 @@ import time
 from . import exceptions
 
 
-URL_FORMAT = "ws://{}:{}/api/v2/channels/samsung.remote.control?name={}&token={}"
+URL_FORMAT = "wss://{}:{}/api/v2/channels/samsung.remote.control?name={}&token={}"
 
 
 class RemoteWebsocket():
