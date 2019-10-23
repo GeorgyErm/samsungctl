@@ -77,6 +77,7 @@ def main():
     parser.add_argument("--port", type=int, help="TV port number (TCP)")
     parser.add_argument("--method",
                         help="Connection method (legacy or websocket)")
+    parser.add_argument("--token", type=int, help="remote control token")
     parser.add_argument("--name", help="remote control name")
     parser.add_argument("--description", metavar="DESC",
                         help="remote control description")
