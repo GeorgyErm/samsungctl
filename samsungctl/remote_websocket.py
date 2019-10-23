@@ -7,7 +7,7 @@ import time
 from . import exceptions
 
 
-URL_FORMAT = "ws://{}:{}/api/v2/channels/samsung.remote.control?name={}"
+URL_FORMAT = "ws://{}:{}/api/v2/channels/samsung.remote.control?name={}&token={}"
 
 
 class RemoteWebsocket():
@@ -17,13 +17,13 @@ class RemoteWebsocket():
         import websocket
 
         if not config["port"]:
-            config["port"] = 8001
+            config["port"] = 8002
 
         if config["timeout"] == 0:
             config["timeout"] = None
 
         url = URL_FORMAT.format(config["host"], config["port"],
-                                self._serialize_string(config["name"]))
+                                self._serialize_string(config["name"]), config["token"])
 
         self.connection = websocket.create_connection(url, config["timeout"])
 
